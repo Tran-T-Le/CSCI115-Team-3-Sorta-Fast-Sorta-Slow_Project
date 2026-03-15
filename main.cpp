@@ -1,5 +1,5 @@
 /********************************************************************************
-Author(s) Group 3: Gurleen Kaur, Tran Dat Le, Vanessa Salinas, Vickydel Gutierrez
+Author(s) Group 3: Gurleen Kaur, Tran Le, Vanessa Salinas, Vickydel Gutierrez
 Course: CSCI 115 Project
 Assignment: Sorting Algorithms
 
