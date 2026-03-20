@@ -51,12 +51,45 @@ void oneArr(int* arr, int size) {
         arr[i] = rand()%1000;
     }
 }
+
+//void InsertionSort(int arr[], int n);
+void oneArr(int* arr, int size);
 //------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------INT MAIN----------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 int main() {
+    //srand(time(NULL));
     
     int algorithm;
+    int size; //n is the size of the array
+    int choice;
+
+    cout << "Choose the size of your array: \n";
+    cout << "[1]: 100 [2]: 1,000 [3]: 10,000 [4]: 100,000 [5]: 500,000 [6]: 1,000,000 \n";
+
+    cin >> choice;
+
+    if (choice == 1){
+        size = 100;
+    } else if (choice == 2){
+        size = 1000;
+    } else if (choice == 3){
+        size = 10000;
+    } else if(choice == 4){
+        size = 100000;
+    } else if(choice == 5){
+        size = 500000;
+    } else if(choice == 6){
+        size = 1000000;
+    } else{
+        cout << "invlaid choice.\n";
+        return 0;
+    }
+
+    
+
+    int* arr = new int[size];
+    oneArr(arr,size);
     
     cout << "Choose one of the following sorting algorithms: \n";
     cout << "[1]: Bubble Sort, [2]: Selection Sort, [3]: Insertion Sort, [4]: Merge Sort, [5]: Quick Sort, [6]: Heap Sort, [7]: Counting Sort, [8]: Radix Sort\n";
@@ -65,12 +98,13 @@ int main() {
 
     cin >> algorithm;
 
+
     if (algorithm == 1){
 
     } else if (algorithm == 2){
 
     } else if (algorithm == 3){
-
+        insertionSort(arr, size);
     } else if (algorithm == 4){
         /* code */
     } else if (algorithm == 5){
@@ -81,6 +115,10 @@ int main() {
         /* code */
     }else if (algorithm == 8){
         /* code */
-    } else
-        return 0;
+    } else{
+        cout << "\ninvalid input";
+    }
+    
+    delete[] arr;
+    return 0;
 }
