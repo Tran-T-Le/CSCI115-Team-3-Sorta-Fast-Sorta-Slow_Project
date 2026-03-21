@@ -25,6 +25,19 @@ Implement Quicksort (best version / randomized or median-of-3)
 Validate correctness (unit tests)
 All implemented sorts pass correctness tests on random + edge cases*/
 //------------------------------------------------------------------------------------------------------------------------------
+// array of sorted values
+void bestCaseArr(int* arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] = i;
+    }
+}
+
+// array of reverse sorted values
+void worstCaseArr(int* arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] = size - i;
+    }
+}
 
 // array of random values <size
 void randomArr(int* arr, int size) {
@@ -54,15 +67,29 @@ void oneArr(int* arr, int size) {
 
 //void InsertionSort(int arr[], int n);
 void oneArr(int* arr, int size);
+
+//--------------------------------------------------------------------------------
+//--------------Printing small function for testing purposes----------------------
+//--------------------------------------------------------------------------------
+
+// only prints the array if the size is less than or equal to 20
+void printSmall(int arr[], int n) {
+    int limit = min(n, 20);
+    for (int i = 0; i < limit; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
 //------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------INT MAIN----------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 int main() {
     //srand(time(NULL));
     
-    int algorithm;
+    int algorithm; //algorithm is the user's choice for the sorting algorithm
     int size; //n is the size of the array
-    int choice;
+    int choice; //choice is the user's choice for the size of the array
 
     cout << "Choose the size of your array: \n";
     cout << "[1]: 100 [2]: 1,000 [3]: 10,000 [4]: 100,000 [5]: 500,000 [6]: 1,000,000 \n";
@@ -88,13 +115,34 @@ int main() {
 
     
 
-    int* arr = new int[size];
-    oneArr(arr,size);
+    int* arr = new int[size]; // create array of size n
+    oneArr(arr,size); // fill array with random values where one is much larger than the others
+
+    cout << "Choose input type:\n";
+    cout << "[1] Best case (sorted)\n";
+    cout << "[2] Average case (random)\n";
+    cout << "[3] Worst case (reverse sorted)\n";
+
+    int inputType;
+    cin >> inputType;
+
+    if (inputType == 1) bestCaseArr(arr, size);
+    else if (inputType == 2) randomArr(arr, size);
+    else if (inputType == 3) worstCaseArr(arr, size);
+    else {
+    cout << "Invalid input type.\n";
+    return 0;
+    }
     
     cout << "Choose one of the following sorting algorithms: \n";
-    cout << "[1]: Bubble Sort, [2]: Selection Sort, [3]: Insertion Sort, [4]: Merge Sort, [5]: Quick Sort, [6]: Heap Sort, [7]: Counting Sort, [8]: Radix Sort\n";
-
-    cout << "Select " << endl;
+    cout << "[1] Bubble Sort\n";
+    cout << "[2] Selection Sort\n";
+    cout << "[3] Insertion Sort\n";
+    cout << "[4] Merge Sort\n";
+    cout << "[5] Quick Sort\n";
+    cout << "[6] Heap Sort\n";
+    cout << "[7] Counting Sort\n";
+    cout << "[8] Radix Sort\n";
 
     cin >> algorithm;
 
@@ -102,15 +150,19 @@ int main() {
     if (algorithm == 1){
 
     } else if (algorithm == 2){
-
+        selectionSort(arr, size);
     } else if (algorithm == 3){
         insertionSort(arr, size);
     } else if (algorithm == 4){
-        /* code */
+        // mergeSort(arr, 0, size - 1);
     } else if (algorithm == 5){
-        /* code */
+        quickSort(arr, 0, size-1);
+        for(int i = 0; i < size; i++){
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     } else if (algorithm == 6){
-        /* code */
+        //heapSort(arr, size);
     } else if (algorithm == 7){
         /* code */
     }else if (algorithm == 8){
@@ -118,6 +170,7 @@ int main() {
     } else{
         cout << "\ninvalid input";
     }
+     printSmall(arr, size);
     
     delete[] arr;
     return 0;
