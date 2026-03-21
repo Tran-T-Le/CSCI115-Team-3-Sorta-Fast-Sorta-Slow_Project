@@ -22,13 +22,3 @@ void selectionSort(int arr[], int size){
     }
 
 return;}
-// -------------------Selection Sort testing area--------------------------
-/*int main(){
-    int arr[10] = { 64, 25, 12, 22, 11, 90, 45, 32, 78, 56 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    selectionSort(arr, n);
-    cout << "Sorted array: \n";
-    for (int i = 0; i < n; i++)        cout << arr[i] << " ";
-    return 0;
-}
-    */
