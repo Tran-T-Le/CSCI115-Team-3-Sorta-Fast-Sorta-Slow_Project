@@ -8,6 +8,7 @@ Assignment: Sorting Algorithms
 #include <ctime>
 #include <cstdlib>
 
+#include "BubbleSort.cpp"
 #include "SelectionSort.cpp"
 #include "InsertionSort.cpp"
 #include "QuickSort.cpp"
@@ -148,7 +149,7 @@ int main() {
 
 
     if (algorithm == 1){
-
+        bubbleSort(arr, size);
     } else if (algorithm == 2){
         selectionSort(arr, size);
     } else if (algorithm == 3){
