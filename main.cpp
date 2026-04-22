@@ -81,12 +81,81 @@ void printSmall(int arr[], int n) {
     }
     cout << endl;
 }
+//------------------------------------------------------------------------------------
+//-----------------------------Helper functions for testing, correctness unit test----
+//------------------------------------------------------------------------------------
+//helper functions to check if the array is sorted and if two arrays are equal
+bool arraysEqual(int* a, int* b, int n) {
+    for (int i = 0; i < n; i++)
+        if (a[i] != b[i]) return false;
+    return true;
+}
+// checks if the array is sorted in non-decreasing order
+bool isSorted(int arr[], int n) {
+    for (int i = 1; i < n; i++)
+        if (arr[i] < arr[i - 1]) return false;
+    return true;
+}
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------WRAPPERS----------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+
+/*void mergeSortWrapper(int arr[], int n) {
+    mergeSort(arr, 0, n - 1);
+}
+*/
+void quickSortWrapper(int arr[], int n) {
+    quickSort(arr, 0, n - 1);
+}
+
+/*void heapSortWrapper(int arr[], int n) {
+    heapSort(arr, n);
+}
+*/
+
+void testSort(void (*sortFunc)(int[], int), string name) {
+    cout << "Testing " << name << "...\n";
+
+    int sizes[] = {0, 1, 5, 10, 100};
+    for (int s : sizes) {
+        int* arr = new int[s];
+        int* ref = new int[s];
+
+        for (int i = 0; i < s; i++) {
+            arr[i] = rand() % 1000;
+            ref[i] = arr[i];
+        }
+
+        sort(ref, ref + s);
+        sortFunc(arr, s);
+
+        if (arraysEqual(arr, ref, s))
+            cout << "  ✔ Passed size " << s << endl;
+        else
+            cout << "  ❌ Failed size " << s << endl;
+
+        delete[] arr;
+        delete[] ref;
+    }
+}
+
 
 //------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------INT MAIN----------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 int main() {
     //srand(time(NULL));
+    cout << "Running correctness tests...\n";
+
+    //testSort(insertionSort, "Insertion Sort");
+    testSort(selectionSort, "Selection Sort");
+    testSort(bubbleSort, "Bubble Sort");
+    //testSort(mergeSortWrapper, "Merge Sort");
+    //testSort(heapSortWrapper, "Heap Sort");
+    testSort(quickSortWrapper, "Quick Sort");
+
+    cout << "Correctness tests complete.\n\n";
     
     int algorithm; //algorithm is the user's choice for the sorting algorithm
     int size; //n is the size of the array
@@ -174,5 +243,6 @@ int main() {
      printSmall(arr, size);
     
     delete[] arr;
+    
     return 0;
 }
