@@ -104,14 +104,15 @@ bool isSorted(int arr[], int n) {
 //------------------------------------------------------WRAPPERS----------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 
-void mergeSortWrapper(int arr[], int n) {
+/*void mergeSortWrapper(int arr[], int n) {
     mergeSort(arr, 0, n - 1);
 }
+*/
 
-
-void radixSortWrapper(int arr[], int n) { // this wrapper is dependant on what radix sort takes as input, if (arr,n) we use this wrapper,
+/*void radixSortWrapper(int arr[], int n) { // this wrapper is dependant on what radix sort takes as input, if (arr,n) we use this wrapper,
     radixSort(arr, n); // if radix sort takes (arr, size, maxVal) then i will need to update this
 }
+*/
 
 
 void quickSortWrapper(int arr[], int n) {
@@ -162,8 +163,8 @@ int main() {
     testSort(selectionSort, "Selection Sort");
     testSort(bubbleSort, "Bubble Sort");
     testSort(countingSort, "Counting Sort");
-    testSort(mergeSortWrapper, "Merge Sort");
-    testSort(radixSortWrapper, "Radix Sort");
+    //testSort(mergeSortWrapper, "Merge Sort");
+    //testSort(radixSortWrapper, "Radix Sort");
     testSort(heapSortWrapper, "Heap Sort");
     testSort(quickSortWrapper, "Quick Sort");
 
@@ -233,54 +234,54 @@ int main() {
         clock_t start = clock();
         bubbleSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
 
     } else if (algorithm == 2){
         clock_t start = clock();
         selectionSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
 
     } else if (algorithm == 3){
         clock_t start = clock();
         insertionSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
 
     } else if (algorithm == 4){
         clock_t start = clock();
         mergeSort(arr, 0, size - 1);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
     } else if (algorithm == 5){
         clock_t start = clock();
         quickSort(arr, 0, size-1);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
     } else if (algorithm == 6){
         clock_t start = clock();
         heapSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
     } else if (algorithm == 7){
         clock_t start = clock();
-        mergeSort(arr, size)
+        countingSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
     }else if (algorithm == 8){
         clock_t start = clock();
         oneArr(arr,size); // fill array with random values where one is much larger than the others
         radixSort(arr, size);
         clock_t end = clock();
-        double elapsed = double(end - start) / CLOCKS_PER_SEC;
-        cout << "Time: " << elapsed << " seconds\n";
+        double elapsed = double(end - start) * 1000.0 / CLOCKS_PER_SEC;
+        cout << "Time: " << elapsed << " ms\n";
     } else{
         cout << "\ninvalid input";
     }
