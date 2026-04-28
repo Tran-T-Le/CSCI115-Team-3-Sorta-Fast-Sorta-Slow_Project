@@ -2,6 +2,14 @@
 using namespace std;
 
 int partition(int arr[], int low, int high) {
+    int mid = low + (high - low) / 2;
+
+    // move the middle element to the end for better efficiency
+    // compared to last quicksort method
+    int tempPivot = arr[mid];
+    arr[mid] = arr[high];
+    arr[high] = tempPivot;
+
     int pivot = arr[high];
     int i = low - 1;
 
