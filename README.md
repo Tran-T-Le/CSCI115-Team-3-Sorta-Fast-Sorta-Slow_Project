@@ -20,14 +20,14 @@
 ---
 ## 3. Files Included in the Project
 ### Part 1:
-- 'main.cpp' - main sorting driver
+- 'main.cpp'
+  - main sorting driver
 - 'BubbleSort.cpp'
-Bubble Sort algorithm
-
+  - Bubble Sort algorithm
 - 'SelectionSort.cpp'
-Selection Sort
+  - Selection Sort algorithm
 - 'InsertionSort.cpp'
-  - Insertion Sort
+  - Insertion Sort algorithm
 - 'MergeSort.cpp'
   - Merge Sort algorithm
 - 'QuickSort.cpp'
@@ -93,10 +93,11 @@ The program offers 3 input types per sorting algorithm:
 ---
 ## 6. Dependencies
 - C++ language & libraries
-- " #include <iostream> "
-- " #include <ctime> "
-- " #include <cstdlib> "
-- " #include <algorithm> "
+- #Include
+  - iostream 
+  - ctime
+  - cstdlib 
+  - algorithm
 
 --- 
 -- References:
