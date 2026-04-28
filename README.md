@@ -17,19 +17,29 @@
 - Practice brute-force and efficent design
 - Create proper documentation and graphs for the final report (Excel document)
 
+---
 ## 3. Files Included in the Project
 ### Part 1:
 - 'main.cpp' - main sorting driver
 - 'BubbleSort.cpp'
+Bubble Sort algorithm
+
 - 'SelectionSort.cpp'
+Selection Sort
 - 'InsertionSort.cpp'
+  - Insertion Sort
 - 'MergeSort.cpp'
+  - Merge Sort algorithm
 - 'QuickSort.cpp'
+  - Quick Sort algorithm
 - 'CountingSort.cpp'
+  - Counting Sort algorithm
 - 'RadixSort.cpp'
+  - Radix Sort algorithm
 
 ### Part 2:
 
+---
 ### 4. Sorting Algorithms in the Project
 1. Bubble Sort
 2. Selection Sort
@@ -40,6 +50,34 @@
 7. Counting Sort
 8. Radix Sort
 
+--- 
+## What the Program Does
+1. runs correctness tests for all sorting algorithms
+2. asks the user to choose an input size
+3. asks the user to choose an input type
+4. asks the user to choose a sorting algorithm
+5. runs the selected algorithm
+6. measures execution time
+7. print the time in millisecond
+8. print the first 20 values of the sorted result
+9. allows the user run another test without rebuilding
+---
+## Input Sizes
+The program supported these array sizes:
+- 100
+- 1,000
+- 10,000
+- 100,000
+- 500,000
+
+--- 
+## Input Types
+The program offers 3 input types per sorting algorithm:
+- [ Best Case ] - already sorted
+- [ Average Case ] - random values
+- [ Worst Case ] - reverse sorted
+
+---
 ## 5. Program Features
 ### Part 1:
 - correctness testing
@@ -52,9 +90,9 @@
 
 ### Part 2:
   
-
+---
 ## 6. Dependencies
-- C++ language
+- C++ language & libraries
 - <iostream>
 - <ctime>
 - <cstdlib>
