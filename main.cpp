@@ -15,7 +15,7 @@ Assignment: Sorting Algorithms
 #include "CountingSort.cpp"
 #include "HeapSort.cpp"
 #include "RadixSort.cpp"
-#include "MergeSort.cpp"9
+#include "MergeSort.cpp"
 
 using namespace std;
 //------------------------------------------------------TO-DO-------------------------------------------------------------------
