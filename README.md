@@ -77,15 +77,22 @@
 
 --- 
 ## What the Program Does
-1. runs correctness tests for all sorting algorithms
-2. asks the user to choose an input size
-3. asks the user to choose an input type
-4. asks the user to choose a sorting algorithm
-5. runs the selected algorithm
-6. measures execution time
-7. print the time in millisecond
-8. print the first 20 values of the sorted result
-9. allows the user run another test without rebuilding
+
+Part 1:
+1. Runs correctness tests for all sorting algorithms
+2. Asks the user to choose an input size
+3. Asks the user to choose an input type
+4. Asks the user to choose a sorting algorithm
+5. Runs the selected algorithm
+6. Measures execution time
+7. Print the time in millisecond
+8. Print the first 20 values of the sorted result
+9. Allows the user run another test without rebuilding
+ 
+Part 2:
+1. 
+
+
 ---
 ## Input Sizes
 The program supported these array sizes:
