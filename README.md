@@ -33,12 +33,12 @@
 ---
 ## How to run Part 2
 - Run `Twosum.cpp`
-- Program prints the sample vector of integers
-- User enters a target value
-- Program runs `bruteForce` on the sample vector
-- Program runs `twoPointer` on the same sample vector
-- Program prints whether a pair exists for both methods
-- The results are used to compare the logic and theoretical time complexity of the two approaches
+    - Program prints the sample vector of integers
+    - User enters a target value
+    - Program runs `bruteForce` on the sample vector
+    - Program runs `twoPointer` on the same sample vector
+    - Program prints whether a pair exists for both methods
+    - The results are used to compare the logic and theoretical time complexity of the two approaches
 
 ---
 ## How to reproduce graphs
@@ -70,10 +70,10 @@ Part 2:
     - one pointer at the end
 - It then adds two values together
     - If the sum equals the target, then it returns true
-    - If the sum is smaller, the left pointer move to the right
-    - If the sum is bigger, the right pointer move to the left
+    - If the sum is smaller, the left pointer moved to the right
+    - If the sum is bigger, the right pointer moved to the left
     - This continues until a pair is found, then it will output as "a pair exists"
-    - If no pairs are found, then the function returns "pair doesn't exists"  
+    - If no pairs exists, then the function returns "no pair was found"  
 
 ---
 ## Notes, Assumptions, Limitations and Known Issues
